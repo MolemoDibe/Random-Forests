@@ -52,6 +52,12 @@ st.title("Purchase Intention Prediction App")
 # Create a header
 st.header("Please input the following information:")
 
+# Initialize session state variables for feedback flow if not already initialized
+if 'show_feedback' not in st.session_state:
+    st.session_state['show_feedback'] = False
+if 'show_feedback_box' not in st.session_state:
+    st.session_state['show_feedback_box'] = False
+
 # Define additional inputs from the SECOND CODE
 st.write("**CUSTOMER TRUST**")
 question_1 = st.number_input("The grocery store’s offerings are worth the money I spend", 1, 5)
@@ -69,7 +75,7 @@ st.write("**PERCEIVED VALUE**")
 question_7 = st.number_input("The grocery store products are affordable", 1, 5)
 question_8 = st.number_input("In this grocery store, compared to other stores outside the township, I can save money", 1, 5)
 
-st.write("**SHOPPING FREQUENCE**")
+st.write("**SHOPPING FREQUENCY**")
 question_9 = st.number_input("How often do customers shop", 1, 5)
 
 st.write("**STORE LAYOUT**")
@@ -100,8 +106,15 @@ if st.session_state['show_feedback_box']:
     feedback = st.text_area("Provide feedback on the prediction:")
 
     if st.button("Submit Feedback"):     
+        # Store the feedback in session state
+        st.session_state['feedback'] = feedback
+
         # Immediately close the feedback dialog after submitting
         st.session_state['show_feedback_box'] = False
         st.session_state['show_feedback'] = False
+        
+        # Optionally show feedback confirmation
+        st.success("Thank you for your feedback!")
+
         # Rerun the app after submission to reset the button
         st.rerun()
