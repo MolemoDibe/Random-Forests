@@ -1,19 +1,30 @@
-# 🎈 Blank app template
+# Purchase Intention Prediction App
 
-A simple Streamlit app template for you to modify!
+# Purchase Intention Prediction App
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+This app is a **Machine Learning-powered tool for predicting purchase intention** based on various user inputs. Built with Streamlit, this app uses a pre-trained Random Forest model to evaluate user responses on multiple factors such as customer trust, price sensitivity, perceived product quality, perceived value, shopping frequency, and store layout. The prediction provides insight into the likelihood of a purchase intention, with an accompanying confidence score.
 
-### How to run it on your own machine
+## Features
 
-1. Install the requirements
+- **Prediction of Purchase Intention**: The app predicts whether a customer is likely to have high or low purchase intention based on user input.
+- **Feedback Mechanism**: After receiving a prediction, users can submit feedback on the accuracy of the prediction, allowing continuous improvement.
+- **Interactive Input Forms**: Users input information on various factors like customer trust, price sensitivity, perceived product quality, and more.
+- **User-Friendly Interface**: The app is built with a clean layout using Streamlit, featuring custom styling to enhance the visual appeal and hide extraneous elements.
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+## How It Works
 
-2. Run the app
+The app uses a pre-trained Random Forest model (`random_forest_model.pkl`) to make predictions. Here’s an outline of its workflow:
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+1. **User Inputs**: The user enters responses to various questions relating to their perception and experience with a grocery store.
+2. **Prediction**: When the "Predict Purchase Intention" button is clicked, the app takes the inputs, processes them through the Random Forest model, and displays a prediction with a confidence score.
+3. **Feedback**: After viewing the prediction, the user has the option to provide feedback, which can be used to further refine the model.
+
+## Installation
+
+To run the app locally, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <your-repository-url>
+   cd <your-repository-folder>
+
