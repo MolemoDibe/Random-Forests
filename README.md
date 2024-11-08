@@ -1,7 +1,5 @@
 # Purchase Intention Prediction App
 
-# Purchase Intention Prediction App
-
 This app is a **Machine Learning-powered tool for predicting purchase intention** based on various user inputs. Built with Streamlit, this app uses a pre-trained Random Forest model to evaluate user responses on multiple factors such as customer trust, price sensitivity, perceived product quality, perceived value, shopping frequency, and store layout. The prediction provides insight into the likelihood of a purchase intention, with an accompanying confidence score.
 
 ## Features
@@ -27,4 +25,15 @@ To run the app locally, follow these steps:
    ```bash
    git clone <your-repository-url>
    cd <your-repository-folder>
+
+pip install -r requirements.txt
+
+streamlit run streamlit_app.py
+
+## Required Packages
+streamlit
+pandas
+numpy
+scikit-learn
+
 
