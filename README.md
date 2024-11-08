@@ -32,8 +32,11 @@ streamlit run streamlit_app.py
 
 ## Required Packages
 streamlit
+
 pandas
+
 numpy
+
 scikit-learn
 
 
